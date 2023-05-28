@@ -24,7 +24,7 @@ public class HelloController {
 	}
 	@RequestMapping(value = "/usergreeting", method = RequestMethod.POST)
 	public String printUserGreeting() {
-		return "works";
+		return "it works";
 		
 	}
 }
