@@ -1,5 +1,6 @@
 package com.michal.demo.web;
 
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -25,7 +26,15 @@ public class HelloController {
 	}
 	@RequestMapping(value = "/usergreeting", method = RequestMethod.POST)
 	public String printUserGreeting(@RequestParam String fname, @RequestParam String lname) {
-		return "Hello there " + fname + " " + lname;
-		
+		return "Hello there " + fname + " " + lname;		
 	}
+	@RequestMapping(value = "/orders/{id}", method = RequestMethod.GET)
+	public String printUserID(@PathVariable String id) {
+		return "Order id: " + id;		
+	}
+//	
+//	@RequestMapping(value = "/error")
+//	public String printError() {
+//		return "Cycu Error ";		
+//	}
 }
