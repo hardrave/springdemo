@@ -10,5 +10,21 @@ public class HelloController {
 	public String sayHello() {
 		return "Hello";
 	}
-	
+	@RequestMapping(value = "/userform", method = RequestMethod.GET)
+	public String userform() {
+		return "<form action=\"/usergreeting\" method=\"POST\">\n"
+				+ "  <label for=\"fname\">First name:</label><br>\n"
+				+ "  <input type=\"text\" id=\"fname\" name=\"fname\"><br>\n"
+				+ "  <label for=\"lname\">Last name:</label><br>\n"
+				+ "  <input type=\"text\" id=\"lname\" name=\"lname\"><br><br>\n"
+				+ "  <input type=\"submit\" value=\"Submit\">\n"
+				+ "</form> \n"
+				+ "\n"
+				+ "<p>If you click the \"Submit\" button, the form-data will be sent to a page called \"/usergreeting\".</p>";
+	}
+	@RequestMapping(value = "/usergreeting", method = RequestMethod.POST)
+	public String printUserGreeting() {
+		return "works";
+		
+	}
 }
