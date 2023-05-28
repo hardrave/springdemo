@@ -2,6 +2,7 @@ package com.michal.demo.web;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -23,8 +24,8 @@ public class HelloController {
 				+ "<p>If you click the \"Submit\" button, the form-data will be sent to a page called \"/usergreeting\".</p>";
 	}
 	@RequestMapping(value = "/usergreeting", method = RequestMethod.POST)
-	public String printUserGreeting() {
-		return "it works";
+	public String printUserGreeting(@RequestParam String fname, @RequestParam String lname) {
+		return "Hello there " + fname + " " + lname;
 		
 	}
 }
