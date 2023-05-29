@@ -8,10 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class HelloController {
-	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String sayHello() {
-		return "Hello";
-	}
+	
 	@RequestMapping(value = "/userform", method = RequestMethod.GET)
 	public String userform() {
 		return "<form action=\"/usergreeting\" method=\"POST\">\n"
